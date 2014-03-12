@@ -10,16 +10,13 @@ Kickstart configs.  Supports ebs- and instance-store-backed instances.
 3. create `/media/ephemeral0/build` and `/media/ephemeral0/cache` directories
 4. create the base image from a kickstart config:
 
-    sudo ./ami_creator/ami_creator.py -c ks-centos6.cfg -n my-image-name -t /media/ephemeral0/build --cache=/media/ephemeral0/cache
-
+        sudo ./ami_creator/ami_creator.py -c ks-centos6.cfg -n my-image-name -t /media/ephemeral0/build --cache=/media/ephemeral0/cache
 5. transfer the image to the attached EBS volume:
 
-    sudo prepare-volume.sh
-
+        sudo prepare-volume.sh
 6. create and launch the instance:
 
-    ./create-image.sh
-
+        ./create-image.sh
 
 ## add'l resources
 
