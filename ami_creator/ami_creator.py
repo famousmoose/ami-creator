@@ -96,12 +96,12 @@ class AmiCreator(imgcreate.LoopImageCreator):
     
     def _create_bootconfig(self):
         imgtemplate = """
-title %(title)s %(version)s EBS
+title %(title)s %(version)s partitioned
     root (hd0,0)
     kernel /boot/vmlinuz-%(version)s root=LABEL=%(fslabel)s %(bootargs)s
     initrd /boot/%(initrdfn)s-%(version)s.img
 
-title %(title)s %(version)s S3
+title %(title)s %(version)s whole disk
     root (hd0)
     kernel /boot/vmlinuz-%(version)s root=LABEL=%(fslabel)s %(bootargs)s
     initrd /boot/%(initrdfn)s-%(version)s.img
